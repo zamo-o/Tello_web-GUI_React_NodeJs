@@ -1,7 +1,7 @@
 import React from "react";
 import socket from "./Socket";
 
-export default function DroneState() {
+export default function DroneStatus() {
 
     const [droneState, setDroneState] = React.useState([]);
 

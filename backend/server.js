@@ -22,8 +22,11 @@ dronState.bind(8890);
 io.on('connection', (socket) => {
     console.log('pripojený používateľ' + socket.id);
 
-    socket.on('skuska', (sprava) => {
-        socket.emit('skuska', {"message": "sup"});
+    socket.on('prikaz-let', (prikazZFrontu) => {
+        console.log('Dostal som príkaz ' + prikazZFrontu + ',' + ' odosielam dronu ...');
+
+        dron.send(prikazZFrontu, 0, prikazZFrontu.length, PORT, HOST, handleError);
+
     });
 });
 
@@ -57,12 +60,7 @@ dronState.on('message', message => {
 
 
 
-// funkcia na vypísanie chybovej správy, použitie pri odosielaní rozkazov dronu
-function handleError(err){
-    if(err){
-        console.log("Error: ${err}");
-    }
-}
+
 
 // Štartovný command, aby zaćal počúvať
 dron.send('command', 0, 'command'.length, PORT, HOST, handleError);
@@ -82,3 +80,11 @@ app.get("/", (req,res) => {
 http.listen(2121, ()=>{
 console.log("Server ide na porte 2121 ...");
 });
+
+
+// funkcia na vypísanie chybovej správy, použitie pri odosielaní rozkazov dronu
+function handleError(err){
+    if(err){
+        console.log("Error: ${err}");
+    }
+}
