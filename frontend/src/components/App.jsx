@@ -1,9 +1,9 @@
 import React from "react";
 import Button from "./Button.jsx";
-import DroneStatus from "./DroneStatus.jsx";
 import socket from "./Socket.js";
 import NAV from "./NAV.jsx";
 import STATUS from "./STATUS.jsx"
+import DRONSTATUS from "./DRONSTATUS.jsx";
 
 //const { io } = require("socket.io-client");
 //const socket = io("http://localhost:2121");
@@ -16,12 +16,13 @@ function App() {
         <div>
 
         <NAV />
-        <STATUS status="none" />
-        <DroneStatus />
+        <STATUS/>
+        <DRONSTATUS />
         
         <div className="odosielanie-prikazov">
-        <Button prikaz="fly"/>
-        <Button prikaz="serus"/>
+        <Button prikaz="takeoff"/>
+        <Button prikaz="land"/>
+        <Button prikaz="emergency"/>
         </div>
 
 
