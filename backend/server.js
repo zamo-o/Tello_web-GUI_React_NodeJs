@@ -42,40 +42,17 @@ dron.on('message', message => {
 dronState.on('message', message => {
     //console.log(`my state🤖 : ${message}`);
     
-    let parametre = [];
+    let obj = {};
     //let skuskaMessage = "pitch:0;roll:0;yaw:0;vgx:0;vgy:0;vgz:0;templ:93;temph:96;tof:6553;h:0;bat:84;baro:834.52;time:0;agx:5.00;agy:5.00;agz:-998.00;";
     message = message.toString().split(";");
     message.forEach(parameter => {
         parameter = parameter.split(":");
         nazovParametru = parameter[0];
-        hodnotaParametru = parameter[1];
-        let obj = {}
-        obj[nazovParametru] = hodnotaParametru;
-        parametre.push(obj);
-        console.log(obj);
-    });
-
-    io.sockets.emit('drone-state', parametre);
-
-  });
-
-  /* DEVELOPMENT AREA*/
-    let obj = {};
-    let skuskaMessage = "pitch:0;roll:0;yaw:0;vgx:0;vgy:0;vgz:0;templ:93;temph:96;tof:6553;h:0;bat:84;baro:834.52;time:0;agx:5.00;agy:5.00;agz:-998.00;";
-    message = skuskaMessage.toString().split(";");
-    message.forEach(parameter => {
-        parameter = parameter.split(":");
-        nazovParametru = parameter[0];
-        hodnotaParametru = parameter[1];
-        
-        
+        hodnotaParametru = parameter[1];  
         obj = {...obj, [nazovParametru]: hodnotaParametru};
-            
-        
-        console.log(obj);
     });
-
    io.sockets.emit('drone-state', obj);
+  });
 
 
 

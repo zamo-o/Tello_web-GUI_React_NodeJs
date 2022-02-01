@@ -1,5 +1,6 @@
 import React from "react";
 import socket from "./Socket";
+import BATERKA from "./BATERKA.jsx"
 
 export default function DRONSTATUS() {
 
@@ -14,7 +15,7 @@ export default function DRONSTATUS() {
         temph: '96',
         tof: '6553',
         h: '0',
-        bat: '84',
+        bat: '95',
         baro: '834.52',
         time: '0',
         agx: '5.00',
@@ -42,12 +43,14 @@ export default function DRONSTATUS() {
         const {pitch, roll, yaw, vgx, vgy, vgz, templ, temph, tof, h, bat, baro, time, agx, agy, agz} = droneState;
 
         return(
-            <>
-            <div>
-            Baterka:
-            {bat}
+            
+            <div className="dron-status">
+
+            <BATERKA percentaBaterky={bat} />   
+
+             
             </div>
-            </>
+            
         );  
     
     

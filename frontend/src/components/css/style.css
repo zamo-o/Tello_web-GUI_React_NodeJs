@@ -41,3 +41,26 @@
 .status h3 {
     margin: 0 1%;
 }
+
+/* -------- BATERKA -------- */
+
+.baterka-box {
+    width: 150px;
+    height: 200px;
+}
+
+.baterka {
+    background-color: green;
+    width: 100%;
+    height: 100%;
+    margin: 5%;
+    padding: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #000000;
+}
+
+.baterka p {
+    color: #FFFFFF;   
+}
