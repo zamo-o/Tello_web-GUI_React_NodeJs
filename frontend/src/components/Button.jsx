@@ -16,7 +16,7 @@ function Button(props){
 
     return(
         <div>
-            <button onClick={handleClick}>Tlacitko command</button>
+            <button onClick={handleClick}>{props.nazov}</button>
         </div>
     );
 }

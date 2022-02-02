@@ -20,9 +20,11 @@ function App() {
         <DRONSTATUS />
         
         <div className="odosielanie-prikazov">
-        <Button prikaz="takeoff"/>
-        <Button prikaz="land"/>
-        <Button prikaz="emergency"/>
+        <Button nazov="hore" prikaz="takeoff"/>
+        <Button nazov="pristat" prikaz="land"/>
+        <Button nazov="flip dolava" prikaz="flip l"/>
+        <Button nazov="doprava" prikaz="right 20"/>
+        <Button nazov="emergency" prikaz="emergency"/>
         </div>
 
 
