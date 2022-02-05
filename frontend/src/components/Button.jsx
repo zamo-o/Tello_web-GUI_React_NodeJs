@@ -2,7 +2,7 @@ import React from "react";
 import socket from "./Socket";
 
 
-function Button(props){
+export default function BUTTON(props){
 
 
     function handleClick() {
@@ -15,10 +15,19 @@ function Button(props){
     
 
     return(
-        <div>
-            <button onClick={handleClick}>{props.nazov}</button>
+        <div className="button-box" onClick={handleClick}>
+            <div className="button-nadpis">
+            <p>{props.nazov}</p>
+            </div>
+            <div className="button-ciarka">
+
+            </div>
+            <div className="button-tlacitko">
+            <p>{props.tlacitko}</p>
+            </div>
+            
         </div>
     );
 }
 
-export default Button;
+//

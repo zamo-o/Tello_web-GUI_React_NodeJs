@@ -5,6 +5,9 @@
     font-family: sans-serif;
 }
 
+/* -------- SEKCIE -------- */
+
+
 /* -------- NAVBAR -------- */
 
 .nav-box {
@@ -33,6 +36,10 @@
 }
 
 /* -------- STATUS -------- */
+
+.dron-status {
+    
+}
 
 .status {
     display: flex;
@@ -63,4 +70,81 @@
 
 .baterka p {
     color: #FFFFFF;   
+}
+
+
+/* -------- TLACITKA -------- */
+
+.dron-commands {
+   
+}
+
+.dron-commands .riadok {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-box {
+    width: 100px;
+    height: 100px;
+    margin: 1%;
+    border: 3px solid #000000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-nadpis{
+    text-align: center;
+    width: 100%;
+    
+    padding: 10%;
+}
+
+.button-ciarka {
+    height: 0;
+    width: 50%;
+    border-bottom: 2px solid #000000;
+}
+
+.button-tlacitko {
+    text-align: center;
+    width: 100%;
+    padding: 10%;
+}
+
+/* -------- INFO -------- */
+
+.info {
+    width: 100%;
+}
+
+/* -------- GRID -------- */
+
+.skuska-grid {
+    height: 80%;
+    text-align: center;
+    display: grid;
+    grid-template:
+    "dron-status dron-status dron-status dron-commands dron-commands"
+    "dron-info dron-info dron-tricks dron-commands dron-commands";
+    grid-gap: 10px;
+}
+
+.skuska-grid .item1 {
+    grid-area: dron-status;
+}
+
+.skuska-grid .item2 {
+    grid-area: dron-commands;
+}
+
+.skuska-grid .item3 {
+    grid-area: dron-info;
+}
+
+.skuska-grid .item4 {
+    grid-area: dron-commands;
 }

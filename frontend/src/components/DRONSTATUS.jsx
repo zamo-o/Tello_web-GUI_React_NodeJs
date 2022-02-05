@@ -44,7 +44,7 @@ export default function DRONSTATUS() {
 
         return(
             
-            <div className="dron-status">
+            <div className="dron-status item1">
 
             <BATERKA percentaBaterky={bat} />   
             {pitch}, {roll}, {yaw}; temp: {templ};{temph}, baro {baro}, vyska: {h} 

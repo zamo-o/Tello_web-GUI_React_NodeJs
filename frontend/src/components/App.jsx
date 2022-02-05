@@ -1,9 +1,13 @@
 import React from "react";
-import Button from "./Button.jsx";
 import socket from "./Socket.js";
+
 import NAV from "./NAV.jsx";
 import STATUS from "./STATUS.jsx"
 import DRONSTATUS from "./DRONSTATUS.jsx";
+import DRONCOMMANDS from "./DRONCOMMANDS.jsx";
+import TRICKS from "./TRICKS.jsx";
+import INFO from "./INFO.jsx";
+import ZAMO_O from "./ZAMO_O.jsx"
 
 //const { io } = require("socket.io-client");
 //const socket = io("http://localhost:2121");
@@ -15,17 +19,22 @@ function App() {
     return(
         <div>
 
-        <NAV />
-        <STATUS/>
-        <DRONSTATUS />
+        <section className="nav-status">
+            <NAV />
+            <STATUS/>
+        </section>
         
-        <div className="odosielanie-prikazov">
-        <Button nazov="hore" prikaz="takeoff"/>
-        <Button nazov="pristat" prikaz="land"/>
-        <Button nazov="flip dolava" prikaz="flip l"/>
-        <Button nazov="doprava" prikaz="right 20"/>
-        <Button nazov="emergency" prikaz="emergency"/>
-        </div>
+
+        <section className="skuska-grid">
+            <DRONSTATUS />
+            <DRONCOMMANDS />
+            <INFO />
+            <TRICKS />
+        </section>
+        
+        <section className="footer">
+            <ZAMO_O />
+        </section>
 
 
 

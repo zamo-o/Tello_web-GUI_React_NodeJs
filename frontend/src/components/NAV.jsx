@@ -9,8 +9,7 @@ export default function NAV() {
               TELLO WEB GUI  
             </div>
             <div className='nav-links'>
-                <a href='#'>CONTROLLER</a>
-                <a href='#'>POČASIE</a>
+                
             </div>
         </div>
     );
