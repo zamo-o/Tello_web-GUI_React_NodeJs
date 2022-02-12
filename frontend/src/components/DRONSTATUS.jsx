@@ -41,14 +41,53 @@ export default function DRONSTATUS() {
       */
 
         const {pitch, roll, yaw, vgx, vgy, vgz, templ, temph, tof, h, bat, baro, time, agx, agy, agz} = droneState;
+        let temp = ((Number(templ) + Number(temph)) / 2);
 
         return(
             
             <div className="dron-status item1">
 
-            <BATERKA percentaBaterky={bat} />   
-            {pitch}, {roll}, {yaw}; temp: {templ};{temph}, baro {baro}, vyska: {h} 
-             
+            <BATERKA percentaBaterky={bat} />
+              <div className="dalsie-dron-info">
+
+                <div className="dron-status-hlavne">
+                  <p>
+                    Výška: {h} cm
+                  </p>
+                  <p>
+                    Teplota: {temp} °C
+                  </p>
+                  <p>
+                    Čas vo vzduchu: {time}
+                  </p>
+                  <p>
+                    Nadmorksá výška: {baro} cm
+                  </p>
+                  <p>
+                    stena: {tof} cm
+                  </p>
+                </div>   
+
+                <div className="dron-status-vedlajsie">
+                  <p>
+                    sklon: {pitch}
+                  </p>
+                  <p>
+                    naklonenie: {roll}
+                  </p>
+                  <p>
+                    vychýlenie: {yaw}
+                  </p>
+                  <p>
+                    rýchlosť: x: {vgx}, y: {vgy}, z: {vgz}
+                  </p>
+                  
+                  <p>
+                    zrýchlenie: x: {agx}, y: {agy}, z: {agz}
+                  </p>
+                </div>
+          
+              </div>
             </div>
             
         );  

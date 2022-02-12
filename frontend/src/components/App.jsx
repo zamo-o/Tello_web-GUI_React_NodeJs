@@ -17,7 +17,10 @@ function App() {
     
 
     return(
+        
         <div>
+
+        <div className="content">
 
         <section className="nav-status">
             <NAV />
@@ -35,7 +38,8 @@ function App() {
         <section className="footer">
             <ZAMO_O />
         </section>
-
+        
+        </div>
 
 
         </div>

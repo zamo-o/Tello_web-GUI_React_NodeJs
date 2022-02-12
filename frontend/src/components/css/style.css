@@ -5,8 +5,27 @@
     font-family: sans-serif;
 }
 
-/* -------- SEKCIE -------- */
+.content {
+    height: 100vh;
+}
 
+/* -------- SEKCIE -------- */
+.nav-status {
+    height: 15%;
+}
+
+.skuska-grid {
+    height: 80%;
+}
+
+.footer {
+    height: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    background-color: #000000;
+    
+}
 
 /* -------- NAVBAR -------- */
 
@@ -38,7 +57,8 @@
 /* -------- STATUS -------- */
 
 .dron-status {
-    
+    display: flex;
+    flex-direction: row;
 }
 
 .status {
@@ -48,12 +68,12 @@
 .status h3 {
     margin: 0 1%;
 }
-
 /* -------- BATERKA -------- */
 
 .baterka-box {
     width: 150px;
     height: 200px;
+    margin: 5%;
 }
 
 .baterka {
@@ -71,35 +91,62 @@
 .baterka p {
     color: #FFFFFF;   
 }
+/* -------- DLASIE-DRON-INFO -------- */
+.dalsie-dron-info {
 
+}
+
+.dron-status-hlavne {
+
+}
+
+.dron-status-vedlajsie {
+
+}
 
 /* -------- TLACITKA -------- */
 
-.dron-commands {
-   
-}
-
-.dron-commands .riadok {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.button-box {
-    width: 100px;
-    height: 100px;
+.dron-commands .button-box {
+    height: 103px;
+    width: 103px;
     margin: 1%;
     border: 3px solid #000000;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    
 }
+
+.dron-tricks .button-box {
+    
+    height: 60%;
+    width: 20%;
+    margin: 1%;
+    border: 3px solid #000000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+/*
+.button-box {
+    width: 103px;
+    height: 103px;
+    margin: 1%;
+    border: 3px solid #000000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}*/
 
 .button-nadpis{
     text-align: center;
     width: 100%;
-    
     padding: 10%;
 }
 
@@ -115,6 +162,39 @@
     padding: 10%;
 }
 
+.button-nadpis,.button-tlacitko p {
+    font-size: 80%;
+}
+
+
+/* -------- TLACITKA COMMANDS -------- */
+
+.dron-commands {
+    height: 100%;
+}
+
+.dron-commands .riadok {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dron-tricks {
+    height: 100%;
+}
+
+.dron-tricks .riadok {
+    width: 100%;
+    height: 33%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* -------- TLACITKA TRICKS -------- */
+
 /* -------- INFO -------- */
 
 .info {
@@ -124,13 +204,13 @@
 /* -------- GRID -------- */
 
 .skuska-grid {
-    height: 80%;
     text-align: center;
     display: grid;
     grid-template:
     "dron-status dron-status dron-status dron-commands dron-commands"
     "dron-info dron-info dron-tricks dron-commands dron-commands";
     grid-gap: 10px;
+    grid-template-columns: 20fr 20fr 20vw 20vw 10vw;
 }
 
 .skuska-grid .item1 {
@@ -146,5 +226,15 @@
 }
 
 .skuska-grid .item4 {
-    grid-area: dron-commands;
+    grid-area: dron-tricks;
+}
+
+
+
+/* -------- FOOTER -------- */
+
+.footer p {
+    color: #FFFFFF;
+    width: 100%;
+    margin-right: 100px;
 }
