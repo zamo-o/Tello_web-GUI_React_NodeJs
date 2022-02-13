@@ -6,17 +6,17 @@ export default  function TRICKS() {
     <div className="dron-tricks item4">
 
         <div className="riadok">
-            <BUTTON nazov="FLIP DOPREDU" prikaz="flip f" tlacitko="H"/>
+            <BUTTON nazov="FLIP DOPREDU" prikaz="flip f" tlacitko="I"/>
         </div>
 
         <div className="riadok">
-            <BUTTON nazov="FLIP DOĽAVA" prikaz="flip l" tlacitko="H"/>
+            <BUTTON nazov="FLIP DOĽAVA" prikaz="flip l" tlacitko="J"/>
             <BUTTON nazov="" prikaz="" tlacitko=""/>
-            <BUTTON nazov="FLIP DOPRAVA" prikaz="flip r" tlacitko="H"/>
+            <BUTTON nazov="FLIP DOPRAVA" prikaz="flip r" tlacitko="L"/>
         </div>
         
         <div className="riadok">
-            <BUTTON nazov="FLIP DOZADU" prikaz="flip b" tlacitko="H"/>
+            <BUTTON nazov="FLIP DOZADU" prikaz="flip b" tlacitko="K"/>
         </div>
         
         </div>
