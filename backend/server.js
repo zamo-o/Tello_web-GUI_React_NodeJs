@@ -28,6 +28,13 @@ io.on('connection', (socket) => {
         dron.send(prikazZFrontu, 0, prikazZFrontu.length, PORT, HOST, handleError);
 
     });
+
+    socket.on('pripojenie-drona', (socket) => {
+        if(socket == "pripoj"){
+            console.log("poziadavka odoslana");
+            dron.send('command', 0, 'command'.length, PORT, HOST, handleError);
+        }
+    });
 });
 
 
@@ -61,6 +68,8 @@ dronState.on('message', message => {
 
 // Štartovný command, aby zaćal počúvať
 dron.send('command', 0, 'command'.length, PORT, HOST, handleError);
+
+
 
 /*
 dron.send('takeoff', 0, 'takeoff'.length, PORT, HOST, handleError);

@@ -13,10 +13,20 @@ export default function STATUS() {
         //return () => socket.removeListener('status');
       }, []);
 
+      function connectDrone() {
+          socket.emit('pripojenie-drona', "pripoj");
+      }
+
     return(
-        <div className="status">
-            <h3>STATUS:</h3>
-            <p>{status}</p>
+        <div>
+            <div className="status">
+                <h3>STATUS:</h3>
+                <p>{status}</p>
+            </div>
+            <button onClick={connectDrone}>PRIPOJIŤ</button>
         </div>
+        
+
+        
     );    
 }

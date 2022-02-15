@@ -12,10 +12,9 @@ export default function BUTTON(props){
 
         console.log("odoslalt som " + prikaz);
     }
-    
 
     return(
-        <div className="button-box" onClick={handleClick}>
+        <div className="button-box" prikaz={props.prikaz} onClick={handleClick}>
             <div className="button-nadpis">
             <p>{props.nazov}</p>
             </div>

@@ -2,6 +2,9 @@ import React from "react";
 import BUTTON from "./BUTTON.jsx";
 
 export default  function TRICKS() {
+
+    
+
     return(
     <div className="dron-tricks item4">
 

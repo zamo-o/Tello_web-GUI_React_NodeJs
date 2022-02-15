@@ -14,7 +14,47 @@ import ZAMO_O from "./ZAMO_O.jsx"
 
 function App() {
 
-    
+    document.addEventListener("keyup", (e) => {
+        console.log(e);
+        let keyMoznosti = ["KeyW", "KeyQ", "KeyE", "KeyA", "KeyD", "KeyR", "KeyF", "KeyS", "ArrowUP", "ArrowDown", "Space", "KeyI", "KeyJ", "KeyL", "KeyK"];
+        switch (e.code) {
+            case "KeyQ":
+                socket.emit('prikaz-let', "ccw 45");
+                break;
+            case "KeyW":
+                socket.emit('prikaz-let', "forward 20");
+                break;
+            case "KeyE":
+                socket.emit('prikaz-let', "cw 45");
+                break;
+            case "KeyA":
+                socket.emit('prikaz-let', "left 20");
+                break;
+            case "KeyR":
+                socket.emit('prikaz-let', "takeoff");
+                break;
+            case "KeyF":
+                socket.emit('prikaz-let', "land");
+                break;
+            case "KeyD":
+                socket.emit('prikaz-let', "right 20");
+                break;
+            case "KeyS":
+                socket.emit('prikaz-let', "back 20");
+                break;
+            case "ArrowUp":
+                socket.emit('prikaz-let', "up 20");
+                break;
+            case "ArrowDown":
+                socket.emit('prikaz-let', "down 20");
+                break;
+            case "Space":
+                socket.emit('prikaz-let', "emergency");
+                break;
+            default:
+                break;
+        }
+    })
 
     return(
         
