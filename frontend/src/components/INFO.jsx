@@ -3,7 +3,7 @@ import React from "react";
 export default function INFO() {
     return (
         <div className="info item3">
-        <h1>informacie o použivani</h1>
+        <h1>Informácie k ovládaniu</h1>
         <p>Lorem ipsum dolor sit amet, 
         consectetur adipiscing elit, 
         sed do eiusmod tempor incididunt 

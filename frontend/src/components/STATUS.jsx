@@ -18,12 +18,13 @@ export default function STATUS() {
       }
 
     return(
-        <div>
+        <div className="status-box">
+        <button onClick={connectDrone}>PRIPOJIŤ</button>
             <div className="status">
                 <h3>STATUS:</h3>
                 <p>{status}</p>
             </div>
-            <button onClick={connectDrone}>PRIPOJIŤ</button>
+            
         </div>
         
 

@@ -4,7 +4,7 @@ export default function BATERKA(props) {
 
 
     const style = {
-        background: 'linear-gradient(0deg, rgba(0,255,21,1)' + props.percentaBaterky +'%, rgba(255,255,255,1) '+ props.percentaBaterky +'%)',
+        background: 'linear-gradient(0deg, rgba(255,76,41,1)' + props.percentaBaterky +'%, rgba(255,255,255,1) '+ props.percentaBaterky +'%)',
     }
 
     return (

@@ -31,7 +31,7 @@ io.on('connection', (socket) => {
 
     socket.on('pripojenie-drona', (socket) => {
         if(socket == "pripoj"){
-            console.log("poziadavka odoslana");
+            console.log("Žiadosť o pripojenie ododslaná");
             dron.send('command', 0, 'command'.length, PORT, HOST, handleError);
         }
     });

@@ -1,8 +1,10 @@
 import React from "react";
 import socket from "./Socket.js";
 
+import './css/style.css'
+
 import NAV from "./NAV.jsx";
-import STATUS from "./STATUS.jsx"
+//import STATUS from "./STATUS.jsx"
 import DRONSTATUS from "./DRONSTATUS.jsx";
 import DRONCOMMANDS from "./DRONCOMMANDS.jsx";
 import TRICKS from "./TRICKS.jsx";
@@ -16,7 +18,7 @@ function App() {
 
     document.addEventListener("keyup", (e) => {
         console.log(e);
-        let keyMoznosti = ["KeyW", "KeyQ", "KeyE", "KeyA", "KeyD", "KeyR", "KeyF", "KeyS", "ArrowUP", "ArrowDown", "Space", "KeyI", "KeyJ", "KeyL", "KeyK"];
+       // let keyMoznosti = ["KeyW", "KeyQ", "KeyE", "KeyA", "KeyD", "KeyR", "KeyF", "KeyS", "ArrowUP", "ArrowDown", "Space", "KeyI", "KeyJ", "KeyL", "KeyK"];
         switch (e.code) {
             case "KeyQ":
                 socket.emit('prikaz-let', "ccw 45");
@@ -51,6 +53,20 @@ function App() {
             case "Space":
                 socket.emit('prikaz-let', "emergency");
                 break;
+
+            case "KeyI":
+            socket.emit('prikaz-let', "flip f");
+            break;
+            case "KeyJ":
+                socket.emit('prikaz-let', "flip l");
+                break;
+            case "KeyL":
+                socket.emit('prikaz-let', "flip r");
+                break;
+            case "KeyK":
+                socket.emit('prikaz-let', "flip b");
+                break;
+
             default:
                 break;
         }
@@ -64,7 +80,6 @@ function App() {
 
         <section className="nav-status">
             <NAV />
-            <STATUS/>
         </section>
         
 

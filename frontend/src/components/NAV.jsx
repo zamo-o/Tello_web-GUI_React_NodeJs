@@ -1,5 +1,5 @@
 import React from 'react';
-import './css/style.css'
+import STATUS from './STATUS.jsx'
 
 export default function NAV() {
 
@@ -9,7 +9,7 @@ export default function NAV() {
               TELLO WEB GUI  
             </div>
             <div className='nav-links'>
-                
+                <STATUS />
             </div>
         </div>
     );

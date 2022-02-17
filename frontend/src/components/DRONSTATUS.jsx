@@ -51,40 +51,57 @@ export default function DRONSTATUS() {
               <div className="dalsie-dron-info">
 
                 <div className="dron-status-hlavne">
-                  <p>
-                    Výška: {h} cm
-                  </p>
-                  <p>
-                    Teplota: {temp} °C
-                  </p>
-                  <p>
-                    Čas vo vzduchu: {time}
-                  </p>
-                  <p>
-                    Nadmorksá výška: {baro} cm
-                  </p>
-                  <p>
-                    stena: {tof} cm
-                  </p>
+                <div className="block">
+                    <h3>
+                      Výška: <span>{h} cm</span>
+                    </h3>
+                    <h3>
+                      Teplota: <span>{temp} °C</span>
+                    </h3>
+                </div>
+                <div className="block">
+                    <h3>
+                      Nadmorksá výška: <span>{baro} cm</span>
+                    </h3>
+                    <h3>
+                      Stena: <span>{tof} cm</span>
+                    </h3>
+                    </div>
                 </div>   
 
                 <div className="dron-status-vedlajsie">
-                  <p>
-                    sklon: {pitch}
-                  </p>
-                  <p>
-                    naklonenie: {roll}
-                  </p>
-                  <p>
-                    vychýlenie: {yaw}
-                  </p>
-                  <p>
-                    rýchlosť: x: {vgx}, y: {vgy}, z: {vgz}
-                  </p>
+                <div className="block">
+                  <div className="block">
+                      <p>
+                        sklon: {pitch}
+                      </p>
+                      <p>
+                        naklonenie: {roll}
+                      </p>
+                      <p>
+                      zrýchlenie: x: {agx}, y: {agy}, z: {agz}
+                    </p> 
+                    </div>
+                    <div className="block">
+                      <p>
+                        vychýlenie: {yaw}
+                      </p>
+                      <p>
+                        rýchlosť: x: {vgx}, y: {vgy}, z: {vgz}
+                      </p> 
+                      <p>
+                      čas vo vzduchu: {time}
+                      </p> 
+                    </div>
+                </div>
                   
-                  <p>
-                    zrýchlenie: x: {agx}, y: {agy}, z: {agz}
-                  </p>
+                  <div className="block">
+                       
+                  </div>
+                  
+                  
+                  
+                  
                 </div>
           
               </div>
