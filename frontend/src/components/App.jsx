@@ -16,7 +16,7 @@ import ZAMO_O from "./ZAMO_O.jsx"
 
 function App() {
 
-    document.addEventListener("keyup", (e) => {
+    document.addEventListener("keypress", (e) => {
         console.log(e);
        // let keyMoznosti = ["KeyW", "KeyQ", "KeyE", "KeyA", "KeyD", "KeyR", "KeyF", "KeyS", "ArrowUP", "ArrowDown", "Space", "KeyI", "KeyJ", "KeyL", "KeyK"];
         switch (e.code) {

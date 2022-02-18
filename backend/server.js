@@ -19,14 +19,18 @@ const dronState = dgram.createSocket('udp4')
 dron.bind(8889);
 dronState.bind(8890);
 
+let vykonavaCommand = false;
+
 io.on('connection', (socket) => {
     console.log('pripojený používateľ' + socket.id);
 
     socket.on('prikaz-let', (prikazZFrontu) => {
-        console.log('Dostal som príkaz ' + prikazZFrontu + ',' + ' odosielam dronu ...');
-
-        dron.send(prikazZFrontu, 0, prikazZFrontu.length, PORT, HOST, handleError);
-
+        
+        if (!vykonavaCommand) {
+            console.log('Dostal som príkaz ' + prikazZFrontu + ',' + ' odosielam dronu ...');
+            dron.send(prikazZFrontu, 0, prikazZFrontu.length, PORT, HOST, handleError);
+            vykonavaCommand = true;
+        }
     });
 
     socket.on('pripojenie-drona', (socket) => {
@@ -40,8 +44,8 @@ io.on('connection', (socket) => {
 
 dron.on('message', message => {
     console.log(`🤖 : ${message}`);
-
     io.sockets.emit('status', `${message}`);
+    vykonavaCommand = false;
 
   });
 
