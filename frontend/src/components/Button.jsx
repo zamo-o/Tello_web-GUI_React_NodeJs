@@ -8,9 +8,10 @@ export default function BUTTON(props){
     function handleClick() {
 
         let prikaz = props.prikaz
+
         socket.emit('prikaz-let', prikaz);
 
-        console.log("odoslalt som " + prikaz);
+        console.log("odoslal som " + prikaz);
     }
 
     return(

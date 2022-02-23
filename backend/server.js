@@ -1,20 +1,15 @@
 const dgram = require('dgram');
-
 const app = require('express')();
 const http = require('http').createServer(app);
+
 const io = require('socket.io')(http, {  cors: { origin: "*", methods: ["GET", "POST"] }})
 
 const HOST = '192.168.10.1';
 const PORT = '8889';
 
-//app.use(express.static("public"));
-
-
 const dron = dgram.createSocket('udp4');
 const dronState = dgram.createSocket('udp4')
 
-// Pridanenie na akých portoch majú počúvať -> "dron" na prichadzajúce správy typu dokončenia operácie, čiže iba "OK" alebo "Error"
-//                                          -> "dronState" na prichádzajúci string, ktorý si rozstrihneme, obsahuje informácie o batérii, výške, teplote a nakrivení
 
 dron.bind(8889);
 dronState.bind(8890);
@@ -22,6 +17,7 @@ dronState.bind(8890);
 let vykonavaCommand = false;
 
 io.on('connection', (socket) => {
+
     console.log('pripojený používateľ' + socket.id);
 
     socket.on('prikaz-let', (prikazZFrontu) => {
@@ -51,6 +47,7 @@ dron.on('message', message => {
 
 
 dronState.on('message', message => {
+    
     //console.log(`my state🤖 : ${message}`);
     
     let obj = {};
@@ -98,3 +95,26 @@ function handleError(err){
         console.log("Error: ${err}");
     }
 }
+
+socket.on('prikaz-let', (prikazZFrontu) => {
+        
+    if (!vykonavaCommand) {
+
+        console.log('Dostal som príkaz ' + prikazZFrontu + ',' + ' odosielam dronu ...');
+
+        dron.send(prikazZFrontu, 0, prikazZFrontu.length, PORT, HOST, handleError);
+
+        vykonavaCommand = true;
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
