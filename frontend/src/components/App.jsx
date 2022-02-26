@@ -4,20 +4,17 @@ import socket from "./Socket.js";
 import './css/style.css'
 
 import NAV from "./NAV.jsx";
-//import STATUS from "./STATUS.jsx"
+
 import DRONSTATUS from "./DRONSTATUS.jsx";
 import DRONCOMMANDS from "./DRONCOMMANDS.jsx";
 import TRICKS from "./TRICKS.jsx";
 import INFO from "./INFO.jsx";
 import ZAMO_O from "./ZAMO_O.jsx"
 
-//const { io } = require("socket.io-client");
-//const socket = io("http://localhost:2121");
-
 function App() {
 
-    document.addEventListener("keypress", (e) => {
-        console.log(e);
+    document.addEventListener("keydown", (e) => {
+        console.log("keydown " + e.code);
        // let keyMoznosti = ["KeyW", "KeyQ", "KeyE", "KeyA", "KeyD", "KeyR", "KeyF", "KeyS", "ArrowUP", "ArrowDown", "Space", "KeyI", "KeyJ", "KeyL", "KeyK"];
         switch (e.code) {
             case "KeyQ":
@@ -67,10 +64,18 @@ function App() {
                 socket.emit('prikaz-let', "flip b");
                 break;
 
+            case "ArrowUp":
+                socket.emit('prikaz-let', "up 20");
+                break;
+            case "ArrowDown":
+                socket.emit('prikaz-let', "down 20");
+                break;
+
             default:
                 break;
         }
-    })
+    });
+
 
     return(
         

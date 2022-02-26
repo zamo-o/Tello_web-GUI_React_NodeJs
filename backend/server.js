@@ -18,7 +18,7 @@ let vykonavaCommand = false;
 
 io.on('connection', (socket) => {
 
-    console.log('pripojený používateľ' + socket.id);
+    console.log('pripojený používateľ ' + socket.id);
 
     socket.on('prikaz-let', (prikazZFrontu) => {
         
@@ -33,6 +33,7 @@ io.on('connection', (socket) => {
         if(socket == "pripoj"){
             console.log("Žiadosť o pripojenie ododslaná");
             dron.send('command', 0, 'command'.length, PORT, HOST, handleError);
+            vykonavaCommand = false;
         }
     });
 });
@@ -62,23 +63,7 @@ dronState.on('message', message => {
    io.sockets.emit('drone-state', obj);
   });
 
-
-
-
-
-
-// Štartovný command, aby zaćal počúvať
 dron.send('command', 0, 'command'.length, PORT, HOST, handleError);
-
-
-
-/*
-dron.send('takeoff', 0, 'takeoff'.length, PORT, HOST, handleError);
-dron.send('land', 0, 'land'.length, PORT, HOST, handleError);
-*/
-
-   
-
 
 app.get("/", (req,res) => {
     res.send("just server side, sup");
@@ -88,33 +73,8 @@ http.listen(2121, ()=>{
 console.log("Server ide na porte 2121 ...");
 });
 
-
-// funkcia na vypísanie chybovej správy, použitie pri odosielaní rozkazov dronu
 function handleError(err){
     if(err){
         console.log("Error: ${err}");
     }
 }
-
-socket.on('prikaz-let', (prikazZFrontu) => {
-        
-    if (!vykonavaCommand) {
-
-        console.log('Dostal som príkaz ' + prikazZFrontu + ',' + ' odosielam dronu ...');
-
-        dron.send(prikazZFrontu, 0, prikazZFrontu.length, PORT, HOST, handleError);
-
-        vykonavaCommand = true;
-    }
-});
-
-
-
-
-
-
-
-
-
-
-

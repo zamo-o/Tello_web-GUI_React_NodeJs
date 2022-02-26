@@ -31,15 +31,7 @@ export default function DRONSTATUS() {
         return () => socket.removeListener('drone-state');
       }, []);
     
-      /* Nastavovanie hodnot ku parametrom 
-        const pitch = droneState.find(status => {return status.parameter == "pitch"});
-        const roll = droneState.find(status => {return status.parameter == "roll"});
-        const yaw = droneState.find(status => {return status.parameter == "yaw"});
-        const baterka = droneState.find(statusBaterky => {return statusBaterky.parameter == "bat"});
-        const templ = droneState.find(status => {return status.parameter == "templ"});
-        const temph = droneState.find(status => {return status.parameter == "temph"});
-      */
-
+    
         const {pitch, roll, yaw, vgx, vgy, vgz, templ, temph, tof, h, bat, baro, time, agx, agy, agz} = droneState;
         let temp = ((Number(templ) + Number(temph)) / 2);
 
@@ -61,7 +53,7 @@ export default function DRONSTATUS() {
                 </div>
                 <div className="block">
                     <h3>
-                      Nadmorksá výška: <span>{baro} cm</span>
+                      Nadmorksá výška: <span>{baro} m</span>
                     </h3>
                     <h3>
                       Stena: <span>{tof} cm</span>
@@ -87,10 +79,10 @@ export default function DRONSTATUS() {
                         vychýlenie: {yaw}
                       </p>
                       <p>
-                        rýchlosť: x: {vgx}, y: {vgy}, z: {vgz}
+                      čas vo vzduchu: {time}
                       </p> 
                       <p>
-                      čas vo vzduchu: {time}
+                        rýchlosť: x: {vgx}, y: {vgy}, z: {vgz}
                       </p> 
                     </div>
                 </div>

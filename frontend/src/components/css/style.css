@@ -398,6 +398,8 @@ body {
 
 .info p {
     width: 80%;
+    text-align: left;
+    margin-bottom: 1%;
 }
 
 /* -------- GRID -------- */
@@ -436,4 +438,6 @@ body {
     color: #FFFFFF;
     width: 100%;
     margin-right: 100px;
+    
+    font-family: 'bomber_escortregular';
 }

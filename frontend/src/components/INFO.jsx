@@ -4,19 +4,12 @@ export default function INFO() {
     return (
         <div className="info item3">
         <h1>Informácie k ovládaniu</h1>
-        <p>Lorem ipsum dolor sit amet, 
-        consectetur adipiscing elit, 
-        sed do eiusmod tempor incididunt 
-        ut labore et dolore magna aliqua. 
-        Ut enim ad minim veniam, quis nostrud 
-        exercitation ullamco laboris nisi ut 
-        aliquip ex ea commodo consequat. Duis 
-        aute irure dolor in reprehenderit in 
-        voluptate velit esse cillum dolore eu 
-        fugiat nulla pariatur. Excepteur sint
-         occaecat cupidatat non proident, sunt
-          in culpa qui officia deserunt mollit anim
-           id est laborum.</p>
+        <p>Na pripojenie k Tello sa pripojte na WiFi ktorú vytvoril, následne stlačte
+        tlačidlo PRIPOJIŤ</p>
+        <p>Na ovládanie slúžia tlačidlá, každé nosí názov príkazu, 
+        ktorý Tello vykoná. Ovládanie je možné stlačením 
+        tlačidiel na klávesnici alebo klikaním na tlačítka. Rozkazy sú rozdelené na 2 sekcie - 
+        1. je na určovanie smeru, týkajú sa pohybu; 2. sekcia sa zaoberá saltami</p>
         </div>
     );
 }
