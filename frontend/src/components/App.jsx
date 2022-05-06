@@ -21,13 +21,13 @@ function App() {
                 socket.emit('prikaz-let', "ccw 45");
                 break;
             case "KeyW":
-                socket.emit('prikaz-let', "forward 20");
+                socket.emit('prikaz-let', "forward 40");
                 break;
             case "KeyE":
                 socket.emit('prikaz-let', "cw 45");
                 break;
             case "KeyA":
-                socket.emit('prikaz-let', "left 20");
+                socket.emit('prikaz-let', "left 40");
                 break;
             case "KeyR":
                 socket.emit('prikaz-let', "takeoff");
@@ -36,16 +36,16 @@ function App() {
                 socket.emit('prikaz-let', "land");
                 break;
             case "KeyD":
-                socket.emit('prikaz-let', "right 20");
+                socket.emit('prikaz-let', "right 40");
                 break;
             case "KeyS":
-                socket.emit('prikaz-let', "back 20");
+                socket.emit('prikaz-let', "back 40");
                 break;
             case "ArrowUp":
-                socket.emit('prikaz-let', "up 20");
+                socket.emit('prikaz-let', "up 40");
                 break;
             case "ArrowDown":
-                socket.emit('prikaz-let', "down 20");
+                socket.emit('prikaz-let', "down 40");
                 break;
             case "Space":
                 socket.emit('prikaz-let', "emergency");
@@ -62,13 +62,6 @@ function App() {
                 break;
             case "KeyK":
                 socket.emit('prikaz-let', "flip b");
-                break;
-
-            case "ArrowUp":
-                socket.emit('prikaz-let', "up 20");
-                break;
-            case "ArrowDown":
-                socket.emit('prikaz-let', "down 20");
                 break;
 
             default:

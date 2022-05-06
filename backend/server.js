@@ -10,7 +10,6 @@ const PORT = '8889';
 const dron = dgram.createSocket('udp4');
 const dronState = dgram.createSocket('udp4')
 
-
 dron.bind(8889);
 dronState.bind(8890);
 
@@ -75,6 +74,6 @@ console.log("Server ide na porte 2121 ...");
 
 function handleError(err){
     if(err){
-        console.log("Error: ${err}");
+        console.log("Error: " + err);
     }
 }

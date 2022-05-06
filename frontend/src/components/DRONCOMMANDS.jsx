@@ -11,25 +11,25 @@ export default  function DRONCOMMANDS() {
 
                 <div className="riadok">
                     <BUTTON nazov="↺" prikaz="ccw 45" tlacitko="Q"/>
-                    <BUTTON nazov="DOPREDU" prikaz="forward 20" tlacitko="W"/>
+                    <BUTTON nazov="DOPREDU" prikaz="forward 40" tlacitko="W"/>
                     <BUTTON nazov="↻" prikaz="cw 45" tlacitko="E"/>
                 </div>
 
                 <div className="riadok">
-                    <BUTTON nazov="DOĽAVA" prikaz="left 20" tlacitko="A"/>
+                    <BUTTON nazov="DOĽAVA" prikaz="left 40" tlacitko="A"/>
                     <BUTTON_START_STOP />
-                    <BUTTON nazov="DOPRAVA" prikaz="right 20" tlacitko="D"/>
+                    <BUTTON nazov="DOPRAVA" prikaz="right 40" tlacitko="D"/>
                 </div>
                 
                 <div className="riadok">
             
-                    <BUTTON nazov="DOZADU" prikaz="back 20" tlacitko="S"/>
+                    <BUTTON nazov="DOZADU" prikaz="back 40" tlacitko="S"/>
                     
                 </div>
 
                 <div className="riadok">
-                    <BUTTON nazov="HORE" prikaz="up 20" tlacitko="↑"/>
-                    <BUTTON nazov="DOLE" prikaz="DOWN 20" tlacitko="↓"/>
+                    <BUTTON nazov="HORE" prikaz="up 40" tlacitko="↑"/>
+                    <BUTTON nazov="DOLE" prikaz="down 40" tlacitko="↓"/>
                 </div>
                 
                 <div className="riadok">
